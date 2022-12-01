@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"sort"
 	"strconv"
 )
 
@@ -29,12 +30,14 @@ func main() {
 		}
 	}
 
-	highVal := 0
+	var sortedCal = make([]int, len(calories))
+	i := 0
 	for _, cal := range calories {
-		if cal > highVal {
-			highVal = cal
-		}
+		sortedCal[i] = cal
+		i++
 	}
-	fmt.Println(highVal)
+
+	sort.Sort(sort.Reverse(sort.IntSlice(sortedCal)))
+	fmt.Println(sortedCal[0] + sortedCal[1] + sortedCal[2])
 
 }
