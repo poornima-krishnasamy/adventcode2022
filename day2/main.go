@@ -26,46 +26,47 @@ func main() {
 		//Rock
 		case "A":
 			fmt.Println(s[0], s[1])
-			// Rock = 1
+			// Lose = scissors
 			if s[1] == "X" {
+				score = score + 3 + 0
+			}
+			// Draw - Rock
+			if s[1] == "Y" {
 				score = score + 1 + 3
 			}
-			// Paper = 2
-			if s[1] == "Y" {
-				score = score + 2 + 6
-			}
-			// Scissors = 3
+			// Win - Paper
 			if s[1] == "Z" {
-				score = score + 3 + 0
+				score = score + 2 + 6
 			}
 			// Paper
 		case "B":
 			fmt.Println(s[0], s[1])
-			// Rock = 1
+			// Lose - Rock
 			if s[1] == "X" {
 				score = score + 1 + 0
 			}
-			// Paper = 2
+			// Draw - Paper
 			if s[1] == "Y" {
 				score = score + 2 + 3
 			}
-			// Scissors = 3
+			// Win = scissors
 			if s[1] == "Z" {
 				score = score + 3 + 6
 			}
+			// Scissors
 		case "C":
 			fmt.Println(s[0], s[1])
-			// Rock = 1
+			// Lose - Paper
 			if s[1] == "X" {
-				score = score + 1 + 6
-			}
-			// Paper = 2
-			if s[1] == "Y" {
 				score = score + 2 + 0
 			}
-			// Scissors = 3
-			if s[1] == "Z" {
+			// Draw - Scissors
+			if s[1] == "Y" {
 				score = score + 3 + 3
+			}
+			// Win = Rock
+			if s[1] == "Z" {
+				score = score + 1 + 6
 			}
 		}
 		fmt.Println(score)
